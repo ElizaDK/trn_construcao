@@ -1,0 +1,436 @@
+:root{
+    --primary-color: #047aed;
+    --secundary-color: #1c3fa8;
+    --dark-color: #002240;
+    --light-color: #f4f4f4;
+    
+}
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    
+}
+body{
+    font-family: 'Lato', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+ul{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+    color: #333;
+}
+h1,h2{
+    font-weight: 300;
+    line-height: 1.2;
+    margin: 10px 0;
+}
+p{
+    margin: 10px 0;
+}
+img{
+    width: 100%;
+}
+/*------------definições gerais----------------------*/
+.container{
+    /*definir tamanho do site*/
+    max-width: 1100px;
+    margin: 0 auto;
+    /*mesmo o h1 tendo margin de 10px colocar overflow*/
+    overflow: auto;
+    padding: 0 40px;
+}
+.flex{
+    display: flex; /*faz os filhos ficarem flexiveis lado a lado*/
+    justify-content: center;/*na vertical vao ficar no centro*/
+    align-items: center;/*alinhar no centro horizontal*/
+    height: 100%;
+}
+.grid{
+    display: grid;
+    grid-template-columns:2fr 1fr; /*defini o tamanho das duas div (showcas-text e showcase-form card), tambem pode ser feito grid-template-columns:repeat (2, 1fr); */
+    gap: 20px;/*espaçamento entre as tabelas*/
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/*------------navbar----------------------*/
+
+span{
+    color: coral;
+    font-weight: 700;
+    text-shadow: 0 0 3px rgb(10, 10, 10);
+}
+span:hover{
+    color: coral
+    cursor: pointer;
+    border-bottom: 2px solid #fff ;
+}
+.navbar .flex{ 
+    justify-content: space-between;
+}
+.navbar{
+    background-color: var(--primary-color);
+    color: #fff;
+    height: 70px;
+}
+.navbar ul{
+    display: flex;/*o menu ficara em linha*/
+}
+.navbar a{
+    color: #fff;
+    padding: 10px;
+    margin: 0 5px;
+}
+.navbar a:hover{
+    border-bottom: 2px solid #fff ;
+}
+
+/*------------showcase----------------------*/
+.showcase{
+    background-color: var(--primary-color);
+    height: 400px;
+    color: #fff;
+    position: relative;
+}
+.showcase h1{
+    font-size: 35px;
+}
+.showcase p{
+    margin: 20px 0;
+}
+.showcase .grid{
+    overflow: visible;
+}
+.card{
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    padding: 20px;
+    margin: 10px;
+    color: #333;
+}
+.showcase-form{
+    position: relative;
+    top: 60px;
+    height: 350px;
+    width: 350px;
+    padding: 40px;
+    z-index: 100;
+    justify-self: flex-end;
+}
+.showcase .form-control{
+    margin: 30px 0;
+}
+.showcase-form input[type='text'],
+.showcase-form input[type='email']{
+    border: 0;
+    border-bottom: 1px solid #b4becb;
+    width: 100%;
+    padding: 3px;
+    font-size: 15px;
+}
+.showcase-form input:focus{/*quando selecionar a caixa*/
+    outline: none;
+}
+/*--------efeito no fundo azul "corte"---------*/
+.showcase::before, .showcase::after{
+    content: '';
+    position: absolute;
+    height: 100px;
+    bottom: -70px;
+    right: 0;
+    left: 0;
+    background: #fff;
+    transform: skewY(-3deg);/*Y na direção de y*/
+    --webkit-transform: skewY(-3deg);/*Y na direção de y*/
+    -moz-transform: skewY(-3deg);/*Y na direção de y no navegador mozila*/
+    -ms-transform: skewY(-3deg);/*Y na direção de y no internet explore */
+}
+.btn{
+    display: inline-block;
+    padding: 10px 30px;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+.btn-outline{ /*botao do primeiro container*/
+    background-color: transparent;
+    border: 1px solid #fff;
+}
+.btn:hover{
+    transform: scale(0.95);
+}
+
+/*--------stats---------*/
+
+.stats{
+    padding-top: 100px;
+}
+.grid-3{
+    grid-template-columns: repeat(3, 1fr);
+}
+.text-center{
+    text-align: center;
+}
+.stats-heading{
+    
+    align-items: center;
+}
+.stats .grid h3{
+    font-size: 35px;
+}
+.stats .grid h3:hover{
+    color: rgb(145, 192, 74);
+    cursor: pointer;
+}
+.stats .grid p{
+    font-size: 20px;
+    font-weight: bold;
+}
+.fa-home{
+    font-size: 20px;
+    color: coral;
+}
+
+/*--------cloud---------*/
+
+.cloud .grid{
+    grid-template-columns: repeat(4, 1fr);;
+}
+.bg-primary, .btn-primary{
+    background-color: var(--primary-color);
+    color: #fff;
+}
+.bg-secondary, .btn-secondary{
+    background-color: var(--secondary-color);
+    color: #fff;
+}
+.bg-dark, .btn-dark{
+    background-color: var(--dark-color);
+    color: #fff;
+}
+.bg-light, .btn-light{
+    background-color: var(--light-color);
+    color: #fff;
+}
+.img-c{
+    width: 350px;
+}
+.btn-dark{
+    width: 115px;
+}
+.lg{
+    font-size: 2rem;
+}
+.lg:hover{
+    border-bottom: 2px solid coral;
+}
+
+/*--------languages--------*/
+
+.languages .card h4{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.languages .card{
+    transition: transform 0.2s ease;
+}
+.languages .card:hover{
+    transform: translateY(-15px);
+    box-shadow: 0 0 3px coral;
+}
+
+/*--------footer--------*/
+
+.bg-dark a, btn-dark a{
+    color: #fff;
+}
+
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 25px;
+}
+
+.footer a:hover{
+    color: coral;
+}
+
+
+
+
+/*MARGIN*/
+.my-1{
+    margin: 1rem 0;
+}
+.my-2{
+    margin: 1.5rem 0;
+}
+.my-3{
+    margin: 2rem 0;
+}
+.my-4{
+    margin: 2.5rem 0;
+}
+.my-5{
+    margin: 3rem 0;
+}
+.m-1{
+    margin: 1rem;
+}
+.m-2{
+    margin: 1.5rem;
+}
+.m-3{
+    margin: 2rem;
+}
+.m-4{
+    margin: 2.5rem;
+}
+.m-5{
+    margin: 3rem;
+}
+/*padding*/
+.py-1{
+    padding: 1rem 0;
+}
+.py-2{
+    padding: 1.5rem 0;
+}
+.py-3{
+    padding: 2rem 0;
+}
+.py-4{
+    padding: 2.5rem 0;
+}
+.py-5{
+    padding: 3rem 0;
+}
+.p-1{
+    padding: 1rem;
+}
+.p-2{
+    padding: 1.5rem;
+}
+.p-3{
+    padding: 2rem;
+}
+.p-4{
+    padding: 2.5rem;
+}
+.p-5{
+    padding: 3rem;
+}
+
+/*   TABLETS AND UNDER  */
+
+@media (max-width: 768px){
+
+    .grid, .showcase .grid,
+    .stats .grid, .cli .grid,
+    .cloud .grid{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        
+    }
+    .cloud .grid{
+        margin-left:100px ;
+    }
+    .container .card {
+        flex-wrap: wrap;
+    }
+    .navbar{
+        height: 110px;
+    }
+    .languages .flex{
+        flex-wrap: wrap;
+        width: 420px;
+    }
+    .languages .card h2{
+        font-size: 40px;
+    }
+    .languages .card h4{
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    .showcase{
+        height: auto;
+    }
+    .showcase-text{
+        text-align: center;
+        margin-top: 40px;
+        max-width: 400px;
+        justify-self: center;
+    }
+    .showcase-form{
+        justify-self: center;
+    }
+}
+
+/*   MOBILE  */
+
+@media (max-width: 500px){
+    .navbar{
+        height: 110px;
+    }
+    .navbar .flex{
+        flex-direction: column;
+    }
+    .navbar ul{
+        padding: 10px;
+        background-color: rgba(0,0,0,0.1);
+    }
+}
+
+
+/*    FEATURES PAG DE PORTFOLIO  */
+
+.features-head img{
+    width: 300px;
+    justify-self: flex-end;
+}
+
+.features-sub-head{
+    
+     /*definir tamanho do site*/
+     max-width: 1100px;
+     margin: 0 auto;
+     /*mesmo o h1 tendo margin de 10px colocar overflow*/
+     overflow: auto;
+     padding: 0 40px;
+   
+}
+
+.features-sub-head .pictures{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+   
+}
+.pictures img{
+    width: 320px;
+    margin-top: 25px;
+    box-shadow: 0 0 8px #000;
+}
+.pictures h1{
+    margin-left: 20px;
+    font-weight: bold;
+    
+}
+.pictures p{
+    margin-left: 20px;
+    margin-right: 20px;
+   
+}
+.pictures1{
+    margin: 25px 25px;
+}
